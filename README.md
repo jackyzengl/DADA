@@ -7,8 +7,7 @@
   <img src="figs/framework.png" width="1000"/>
 </div><br/>
 
-## News
-- `[2024/08/10]` arxiv paper release.
+
 
 ## Setup
 **Environment**
