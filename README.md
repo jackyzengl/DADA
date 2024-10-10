@@ -1,12 +1,16 @@
 <div align="center">
-<h1>DADA</h1>
-<h3>Dual-Alignment Domain Adaptation for Pedestrian Trajectory Prediction</h3>
+<h1>DADA: Dual-Alignment Domain Adaptation for Pedestrian Trajectory Prediction</h1>
 </div>
 
 <div align="center">
   <img src="figs/framework.png" width="1000"/>
 </div><br/>
 
+<!-- > **Dual-Alignment Domain Adaptation for Pedestrian Trajectory Prediction**, RA-L
+> Wenzhan Li<sup>∗</sup>, Fuhao Li<sup>∗</sup>, Xinghui Jing, [Pingfa Feng](https://dblp.uni-trier.de/pid/94/319.html), [Long Zeng](https://scholar.google.com/citations?user=72QbaQwAAAAJ&hl=en&oi=ao)<sup>†</sup>. <sup>∗</sup> equal contributions, <sup>†</sup> corresponding author.
+> 
+> - Paper: [Publication Version]() | [Google Drive Version]()
+> - [Slides]() | [Presentation Video]() -->
 
 
 ## Setup
@@ -103,7 +107,20 @@ To view the baseline and DLA evaluation result, you just need to modify the [che
   <img src="figs/results_FDE.png" width="1000"/>
 </div><br/>
 
-### visualization
+### Visualization
 <div align="center">
   <img src="figs/pred_traj.png" width="1000"/>
 </div><br/>
+
+<!-- ## Citation
+Please use the following citation if you find this repository or our paper [DADA]() useful:
+```
+@article{
+}
+```
+
+## Acknowledgements
+
+
+## License
+All code in this repository is licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). -->
