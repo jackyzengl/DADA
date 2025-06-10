@@ -70,9 +70,9 @@ def plot_trajectories(ax,
     
     t = 0
     for node in range(histories_dict.shape[0]):
-        history = histories_dict[node]  # [8, 2]
-        future = futures_dict[node]
-        predictions = prediction_dict[node]
+        history = world_to_pixel(histories_dict[node], np.linalg.inv(H_mat))
+        future = world_to_pixel(futures_dict[node], np.linalg.inv(H_mat))
+        predictions = world_to_pixel(prediction_dict[node], np.linalg.inv(H_mat))
         
         if np.isnan(history[-1]).any():
             continue
