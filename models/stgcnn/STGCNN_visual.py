@@ -22,19 +22,9 @@ import seaborn as sns
 from matplotlib.lines import Line2D
 
 
-import debugpy
-try:
-    debugpy.listen(("localhost", 9501))
-    print("Waiting for debugger attach")
-    debugpy.wait_for_client()
-except Exception as e:
-    pass
-
 H_mat = np.array([[2.8128700e-02,2.0091900e-03,-4.6693600e+00],
                   [8.0625700e-04,2.5195500e-02,5.0608800e+00],
                   [3.4555400e-04,9.2512200e-05,4.6255300e-01]])
-
-x_list, y_list = [], []
 
 def world_to_pixel(world_points, H):
     points_dim = world_points.ndim
@@ -60,7 +50,6 @@ def plot_trajectories(ax,
                       histories_dict,  # [N, 8, 2]
                       futures_dict,  # [N, 12, 2]
                       ):  
-    global x_list, y_list
     cmap1 = ['Purples', 'Blues', 'Oranges', 'Greens', 'Reds', 'Greys']
     cmap2 = ['purple', 'blue', 'orange', 'green', 'red', 'grey']
     t = 0
@@ -70,9 +59,6 @@ def plot_trajectories(ax,
         history = world_to_pixel(histories_dict[node], np.linalg.inv(H_mat))
         future = world_to_pixel(futures_dict[node], np.linalg.inv(H_mat))
         predictions = world_to_pixel(prediction_dict[node], np.linalg.inv(H_mat))
-
-        x_list.append(history[..., 0])
-        y_list.append(history[..., 1])
     
         if np.isnan(history[-1]).any():
             continue
@@ -106,7 +92,7 @@ def plot_trajectories(ax,
     ax.axis('equal')
 
 
-def visual(KSTEPS=1):
+def visual(KSTEPS=20):
     global loader_test,model
     model.eval()
     ade_bigls = []
@@ -277,4 +263,3 @@ for feta in range(len(paths)):
         fde_ =999999
         print("Testing ....")
         visual()
-print("*"*50)
